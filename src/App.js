@@ -1,26 +1,48 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
 
-function App() {
+
+class App extends Component {
+
+incrementCount = () =>{
+  this.setState(prevState => ({
+    count: prevState.count +1
+  }))
+}
+
+toggleLight = () =>{
+  this.setState(prevState =>({
+    isOn: !prevState.isOn
+
+  }))
+}
+
+
+
+  state = { 
+    count:0,
+    isOn: false };
+  render(){
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <h2>Counter</h2>
+    <div>
+    <button onClick={this.incrementCount}>Click me</button>
+    i was clicked {this.state.count} times.
     </div>
+    <h2>Toggle Light</h2>
+    <div
+    style={{
+      height: '50px',
+      width: '50px',
+      background: this.state.isOn ? "yellow" : "grey"
+
+    }}
+    onClick={this.toggleLight}
+    >
+      </div>
+    </>
   );
+}
 }
 
 export default App;
