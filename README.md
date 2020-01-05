@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+git remote set-url origin git@github.com:kevinyohe/reacthooks.git
 
 ## Available Scripts
 
